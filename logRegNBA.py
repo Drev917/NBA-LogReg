@@ -70,7 +70,7 @@ model_prediction = reg.predict(xTest)
 
 diff = (model_prediction - yTest)
 
-print(sum(abs(diff))) #wrong predictions
+print('Number of incorrect predictions: ' + str(sum(abs(diff))) #wrong predictions
 
 print(reg.coef_) #beta values
 print(reg.intercept_) #y response
@@ -92,6 +92,6 @@ newTestSet = np.vstack((person1,person2,person3))
 goodRebounder = reg.predict_proba(newTestSet) #input type for any sklearn .predict() functions
 print(goodRebounder)
 
-print("Probabilities of player being a good rebounder (in order):")
+print("Probabilities of player being a good rebounder:")
 for i in range(3):
     print(goodRebounder[i][1])
