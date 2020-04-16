@@ -1,4 +1,4 @@
-# NBA-Logistic Regression
+# NBA Logistic Regression
 Analysis on an NBA player dataset to determine:
 - How to define a good rebounder, `Good Rebounder`, (> 8 total rebounds per game).
     - This index was categorical, so I converted it to a numerical column called `RebounderNumeric` in order to make a prediction on a binary value.
