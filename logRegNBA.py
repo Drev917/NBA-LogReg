@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Mar 26 18:48:43 2020
-
 @author: Drewb
 """
 
@@ -71,7 +70,7 @@ model_prediction = reg.predict(xTest)
 
 diff = (model_prediction - yTest)
 
-print('Number of incorrect predictions: ' + str(sum(abs(diff))) #wrong predictions
+print(sum(abs(diff))) #wrong predictions
 
 log_odds = reg.coef_ #print value of beta coefficients
 beta_0 = reg.intercept_ #print value of beta0 (y-intercept)
@@ -99,3 +98,4 @@ print(goodRebounder)
 print("Probabilities of player being a good rebounder:")
 for i in range(3):
     print(goodRebounder[i][1])
+
