@@ -51,6 +51,7 @@ nbaData["Pos"] = nbaData["Pos"].cat.codes
 nbaData = nbaData.dropna(axis=0, how='any') #drop any rows containing an NaN
 nbaData = nbaData[["RebounderNumeric","MP","Pos","PS/G","AST","STL"]]
 
+np.random.seed(0)
 numberRows = len(nbaData)
 randomlyShuffledRows = np.random.permutation(numberRows)
 trainingRows = randomlyShuffledRows[0:320] #use first 320 random rows for training
@@ -66,14 +67,17 @@ reg = linear_model.LogisticRegression(solver='lbfgs') #Silencing FutureWarning o
 reg.fit(xTrain,yTrain)
 
 model_prediction = reg.predict(xTest)
-#model_prediction is 1 or 0.
+#model_prediction is binary
 
 diff = (model_prediction - yTest)
 
 print('Number of incorrect predictions: ' + str(sum(abs(diff))) #wrong predictions
 
-print(reg.coef_) #beta values
-print(reg.intercept_) #y response
+log_odds = reg.coef_ #print value of beta coefficients
+beta_0 = reg.intercept_ #print value of beta0 (y-intercept)
+
+print(log_odds)
+print(beta_0)
 
 #scores the accuracy of logistic regression prediction.
 score = reg.score(xTest,yTest)
