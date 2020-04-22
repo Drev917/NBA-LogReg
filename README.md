@@ -12,4 +12,4 @@ In order to test the model, I created 3 players with hypothetical statistics bas
 - `AST` - Assists Per Game
 - `STL` - Total Steals Per Game
 
-I stacked these parameters vertically using Numpy into a new test set and ran a prediction on `RebounderNumeric`.
+I stacked the parameters vertically using Numpy into a new test set and ran a prediction using sklearn on `RebounderNumeric`.
