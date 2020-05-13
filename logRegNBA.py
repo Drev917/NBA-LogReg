@@ -95,7 +95,7 @@ newTestSet = np.vstack((person1,person2,person3))
 goodRebounder = reg.predict_proba(newTestSet) #input type for any sklearn .predict() functions
 print(goodRebounder)
 
-print("Probabilities of player being a good rebounder:")
+print("Probabilities of player being a good rebounder (log odds):")
 for i in range(3):
     print(goodRebounder[i][1])
 
