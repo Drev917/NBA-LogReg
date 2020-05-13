@@ -36,7 +36,7 @@ del nbaData["TOV"]
 del nbaData["PF"]
 
 nbaData["Good Rebounder"] = np.where(nbaData["TRB"]>8, 'Yes', 'No') #Defining Good Rebounder Column
-nbaData = nbaData[["Good Rebounder","MP","Pos","PS/G","AST","STL"]] #5 predictor columns (x1,x2,x3,x4,x5) and 1 response column (y)
+nbaData = nbaData[["Good Rebounder","MP","Pos","PS/G","AST","STL"]] #5 predictor columns (beta1,beta2,beta3,beta4,beta5) and 1 response column (beta0)
 nbaData["Pos"] = nbaData["Pos"].str[:2] #creates the 5 distict Pos values. Deprecates '-'
 
 #transforming categorical data into numerical using indicator variables
